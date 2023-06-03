@@ -1,8 +1,5 @@
-import math
-import operator
 import random
 import sys
-import time
 import heapq
 
 character_special_moves = {
@@ -778,7 +775,7 @@ class Player:
             coord = random_option[1] 
             new_x = coord[0] + 1
             new_y = coord[1] + 1
-            print(f"Human Coords: ({new_x}, {new_y})")
+            #print(f"Human Coords: ({new_x}, {new_y})")
             board[self.x][self.y] = '[  ]'
             self.move(new_x, new_y)
             board[new_x-1][new_y-1] = '[' + self.id + ']'
@@ -820,7 +817,7 @@ class Player:
                 new_x = self.x + i
                 new_y = self.y + j               
                 distance = abs(new_x - (self.x)) + abs(new_y - (self.y))        
-                print(f"{player.x} And {player.y}")
+                #print(f"{player.x} And {player.y}")
                 if new_x == player.x and new_y == player.y:
                     if new_x != self.x and new_y != self.y: 
                         overlap = True                
@@ -829,8 +826,8 @@ class Player:
                     # Add the new coordinates as a tuple to the list of possible move tiles
                     #print(f"Player: {distance} <= {self.movement}")
                     move_tiles.append((new_x, new_y))
-                    print(f"NEW COORDS: ({new_x}, {new_y})")
-                    print(f"NEW HUMAN COORDS: ({new_x + 1}, {new_y + 1})")
+                    #print(f"NEW COORDS: ({new_x}, {new_y})")
+                    #print(f"NEW HUMAN COORDS: ({new_x + 1}, {new_y + 1})")
         return move_tiles
 
     
